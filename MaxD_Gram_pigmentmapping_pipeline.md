@@ -2,7 +2,7 @@
 
 ```mermaid
 flowchart TD
-    Start[Start: Employ Maximum Distance to determine endmembers]
+    Start[Start: Pigment Mapping with MaxDist-Gram and SAM]
     Start --> A["Select a relatively large number of endmembers (e.g., 15)"]
     A --> B[Calculate vector lengths of each pixel]
     B --> C[Select pixels with largest and smallest distances as first two endmembers]

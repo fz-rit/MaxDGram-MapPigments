@@ -247,7 +247,6 @@ print("RUN TIME --- %s seconds ---" % (time.time() - start_time))
 # show the class map image with the same color map as used to plot the spectra
 ###
 plt.figure(ifigure)
-#picture = plt.imshow(class_map,cmap = newcmp)
 picture = plt.imshow(np.flip(np.flip(class_map,axis=1),axis=0),cmap = newcmp)
 plt.title('Class Map from EMs: HSI')
 #plt.show()
