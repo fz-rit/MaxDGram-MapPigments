@@ -10,16 +10,17 @@ MaxDGram-MapPigments/
 │   ├── MaxD_Gram.py  -- Extracts end members using MaxD and estimates the material diversity using Gram matrix.
 │   ├── spectral_tools.py -- Simple spectral tools, starting with spectral angle calculation.
 ├── pigment_map_MaxD.ipynb -- The notebook for analyzing and visualizing pigment distribution using maximum distance.
-├── pigment_map_MaxD.py -- Script for mapping pigments using the MaxDGram algorithm
+├── pigment_map_MaxD.py -- Script for getting the results in the above notebook directly.
 ├── MaxD_Gram_pigmentmapping_pipeline.md -- The pipeline of the MaxDGram-MapPigments project, detailing the steps and processes involved.
 └── README.md
 ```
 
-## Dependencies
+## Usage
+First create a new conda environment with python=3.9 and activate it, then install dependencies.
 ```bash
 pip install numpy matplolib spectral
 ```
-
+You can start with the notebook [`pigment_map_MaxD.ipynb`](pigment_map_MaxD.ipynb). If you want a clean one-click run, change the paths in the [`pigment_map_MaxD.py`](pigment_map_MaxD.py) and then run it. Flip the `saveimages` flag (line 77) if you want to save the results.
 
 ## Citation
 

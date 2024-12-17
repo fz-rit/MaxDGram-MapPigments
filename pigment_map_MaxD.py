@@ -44,7 +44,7 @@ import spectral.io.envi as envi
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap, LinearSegmentedColormap
-from pigment_mapping.src.MaxD_Gram import *
+from src.MaxD_Gram import *
 
 import time
 
@@ -52,7 +52,7 @@ import time
 #define function to open up an ENVI file and return the image
 #from openENVI import *
 # my spectral tools
-from pigment_mapping.src.spectral_tools import *
+from src.spectral_tools import *
 
 ###
 # starting stuff
@@ -70,18 +70,11 @@ print('Starting time [GMT]: ', start_hour,':', start_min,':',start_sec)
 
 infolder = r'C:\Users\fzhcis\Documents\projects\from_DavidM\for_Fei\Data\Symeon\\'
 image_file = infolder + 'Symeon_VNIR_cropped'
-
-
-###
-# if desired (saveimages = 1), output image file location and name
-###
-# outfolder = '/Users/dwmpaci/Desktop/3_PROJECTS/2_GoughMap/2022_06_GM_data/070622/Position-2/6_ENVI/'
-#outfolder = '/Users/dwmpaci/Desktop/3_PROJECTS/python_dev/Pigment_Mapping_SAM_EM/'
 outfolder = infolder
 outfile = outfolder+'Symeon_VNIR_MaxD_class_map_v2.pdf'
 specfolder = outfolder
 specfile = outfolder+'junk.pdf'
-saveimages = 1
+saveimages = False
 
 ###
 # enter number of endmembers to start off with (this should be more than the expected endmembers)
@@ -223,7 +216,7 @@ plt.xlabel('Wavelength (nm)')
 plt.ylabel('Reflectance')
 plt.title('Endmember Spectra')
 plt.legend(loc='best')
-if saveimages == 2:
+if saveimages:
     plt.savefig(specfile,dpi = 600)
 #plt.show()
 ifigure += 1
@@ -251,7 +244,7 @@ picture = plt.imshow(np.flip(np.flip(class_map,axis=1),axis=0),cmap = newcmp)
 plt.title('Class Map from EMs: HSI')
 #plt.show()
 ifigure +=1
-if saveimages == 1:
+if saveimages:
     #plt.imsave(outfolder+'WS_FF_classmap_4classes.pdf',class_map)
     plt.savefig(outfile,dpi=600)
 
